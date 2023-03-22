@@ -1,10 +1,7 @@
 import React from "react";
 import { FaTimes, FaPen, FaRegCircle } from "react-icons/fa";
 
-/*hint:
- we don't want to return anything generic because we want to first
- test then base on that testing we "return" */
-const Icons = ({ name }) => {
+const Icon = ({ name }) => {
   switch (name) {
     case "circle":
       return <FaRegCircle className='icons' />;
@@ -15,4 +12,8 @@ const Icons = ({ name }) => {
   }
 };
 
-export default Icons;
+export default Icon;
+
+/*hint:
+ we don't want to return anything generic because we want to first
+ test then base on that testing we "return" */
