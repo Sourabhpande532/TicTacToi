@@ -59,9 +59,24 @@ const App = () => {
     setWinMessage("");
     itemArray.fill("empty", 0, 9);
   };
+ 
+  /*
+  FinalPortion of this game to more clear concept need to watch hitesh sir tic toc toi youtube video.
+  there mention first determined all the value in row ➡️ base on index then on the column ⬇️ then on the digonals ♦️ ❌ 
+  & also check it's empty or not.
+  let's first check the row if the position at zero value is equal === itemArray[1] put && condtion
+  then also again check weather the same value at zero th position itemArry[0]=== itemArray[2] Is also equal to position No. 2
+  we need to check one more thing if we'r not checking everything against the empty so let's take an 
+  itemArray at the position zero != to "empty"  
 
+  
+  */
   const checkIsWinner = () => {
-    //
+    if(itemArray[0] === itemArray[1] && 
+      itemArray[0] === itemArray[2] &&
+      itemArray[0] !== "empty"){
+        setWinMessage(`${itemArray[0]} wins`)
+      }
   };
 
   /**********************************************************************************************************************************************
@@ -175,7 +190,7 @@ const App = () => {
           <div className='grid'>
             {itemArray.map((item, index) => {
               return (
-                <Card>
+                <Card color="warning" onClick={()=>changeItem(index)}>
                   <CardBody className='box'>
                     <Icon name={item} />
                   </CardBody>
@@ -190,3 +205,23 @@ const App = () => {
 };
 
 export default App;
+
+/* @2ndlastPorttioninside <card/> =>
+The task button is suppose to be click able then want to determinded as well so we've some 
+on click methods you can place it anywhere you like. use onclick on <card onclick={()=>()}>.
+we'r gonna fireing up inside onclick methods(watch game to clear concept.) 👆 we usually get 
+callback here. but we've notice we can atucally call directly some kind of stuff here just like 
+we did on above code you can call reloadgame line 166.
+So,i would like to really call 'changeItem' which is responsible for changing the item if you noticed
+so we've change item on line no. 125 which expect to pass on itemNumber or in this case we've index
+so, i don't have any way to pass this on if i use this dirctly into a onclick=(here) like changeItem(); it's gonna run my 
+methods directly i don't want that to happen but i can also do kind of in bet'n of firing up a callback & making
+this methods long & as well as use this items it's hack or say's it's syntax.
+remember we'were having this kind of callback methods {()=>{}} So {}instead of having callback & writing all the methods
+here what we can do we can call this methods inside a callback {()=>changeItem} we'r gonna simply say changeItem now i cna
+actually run this which gonna not run dirctly this becz it's gonna fireup callback whenever Somebuddy click it's not directly
+with parenthesis now i can pass this index in (index) to make card colorful use color property. right now it just flip the switch.
+
+So, let's check who's winner or not for that you need to go on your ::=> "checkIsWinner()" section.
+
+*/
