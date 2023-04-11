@@ -8,7 +8,7 @@
 
 ✅ First we disign card with the help of reactStrap
   /***************************************************************************************
-  1st Bootstrap is all about Road & column we'r introducing a row inside this one
+  1st Bootstrap is all about Row & column we'r introducing a row inside this one
     we'r introducing col which is mandatory you need to tell what's gonna be width
     or How many item you want to consume in the md scale consume 6 then we need to 
     mention className of it when i say offset-md-3 it mean come in center once this
